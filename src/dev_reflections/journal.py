@@ -1,0 +1,75 @@
+"""
+Generate reflection questions with Ollama and save journal entries as Markdown.
+"""
+
+from datetime import datetime
+from pathlib import Path
+
+import ollama
+
+# Resolve paths from the project root.
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROMPT_PATH = PROJECT_ROOT / "prompts" / "reflection_system.txt"
+ENTRIES_DIR = PROJECT_ROOT / "entries"
+
+# Set this to your preferred model name from `ollama list`.
+MODEL = "gemma4:e4b"
+
+
+def load_system_prompt() -> str:
+    """Load the system prompt from a text file."""
+    if not PROMPT_PATH.is_file():
+        raise FileNotFoundError(f"System prompt file not found: {PROMPT_PATH}")
+
+    prompt = PROMPT_PATH.read_text(encoding="utf-8").strip()
+    if not prompt:
+        raise ValueError("System prompt file is empty")
+
+    return prompt
+
+
+def generate_question(entry: str) -> str:
+    """Ask Ollama to generate one concise follow-up question."""
+    if not entry.strip():
+        raise ValueError("Entry cannot be empty or whitespace")
+
+    response = ollama.chat(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": load_system_prompt()},
+            {"role": "user", "content": entry},
+        ],
+    )
+
+    question = response.message.content.strip()
+    if not question:
+        raise ValueError("Ollama returned an empty question")
+
+    return question
+
+
+def save_entry(entry: str, question: str, answer: str) -> Path:
+    """Save the entry, AI question, and user's answer as a Markdown file."""
+    timestamp = datetime.now().astimezone()
+    filename = timestamp.strftime("%Y-%m-%d_%H-%M-%S.md")
+    file_path = ENTRIES_DIR / filename
+
+    content = f'''# Reflection - {timestamp.strftime("%Y-%m-%d %H:%M:%S %Z")}
+
+## Journal Entry
+
+{entry.strip()}
+
+## Reflection Question
+
+{question.strip()}
+
+## My Reflection
+
+{answer.strip()}
+'''
+
+    ENTRIES_DIR.mkdir(parents=True, exist_ok=True)
+    file_path.write_text(content, encoding="utf-8")
+
+    return file_path
