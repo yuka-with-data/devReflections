@@ -1,7 +1,6 @@
 """ Testing the journal module. """
 import re
 from datetime import datetime
-
 from dev_reflections import journal
 from dev_reflections.journal import JOURNAL_PROMPTS, choose_starter_prompt
 
@@ -38,6 +37,7 @@ def test_choose_invalid_prompt(monkeypatch):
 
     assert choose_starter_prompt() == ""
 
+
 def test_save_entry_creates_markdown(tmp_path, monkeypatch):
     """ Test that save_entry creates a Markdown file with the correct content."""
     monkeypatch.setattr(journal, "ENTRIES_DIR", tmp_path)
@@ -59,6 +59,7 @@ def test_save_entry_creates_markdown(tmp_path, monkeypatch):
         path.name,
     )
 
+
 def test_save_entry_contains_all_sections(tmp_path, monkeypatch):
     """ Test that the saved Markdown file contains all sections. """
     monkeypatch.setattr(journal, "ENTRIES_DIR", tmp_path)
@@ -77,6 +78,7 @@ def test_save_entry_contains_all_sections(tmp_path, monkeypatch):
     assert '## My Reflection' in content
     assert answer in content
 
+
 def test_save_entry_strips_surrounding_whitespace(tmp_path, monkeypatch):
     """ Test that save_entry strips surrounding whitespace from the entry, question, and answer. """
     monkeypatch.setattr(journal, "ENTRIES_DIR", tmp_path)
@@ -93,3 +95,38 @@ def test_save_entry_strips_surrounding_whitespace(tmp_path, monkeypatch):
     assert "What did I learn?" in content
     assert "I learned something." in content
     assert "  My journal entry.  " not in content
+
+def test_save_entry_includes_starter_prompt(tmp_path, monkeypatch):
+    """Verify that a selected starter prompt is saved in Markdown."""
+    monkeypatch.setattr(journal, "ENTRIES_DIR", tmp_path)
+
+    starter_prompt = "What did I learn today?"
+    path = journal.save_entry(
+        "I learned pytest fixtures.",
+        "What was most useful?",
+        "The fixtures made testing easier.",
+        starter_prompt=starter_prompt,
+    )
+
+    content = path.read_text(encoding="utf-8")
+
+    assert "## Starter Prompt" in content
+    assert starter_prompt in content
+
+
+def test_save_entry_omits_starter_prompt_when_not_selected(
+    tmp_path, monkeypatch
+):
+    """Verify that free-writing entries omit the starter prompt section."""
+    monkeypatch.setattr(journal, "ENTRIES_DIR", tmp_path)
+
+    path = journal.save_entry(
+        "I wrote freely today.",
+        "What stood out?",
+        "I enjoyed exploring an idea.",
+    )
+
+    content = path.read_text(encoding="utf-8")
+
+    assert "## Starter Prompt" not in content
+    assert "## Journal Entry" in content
