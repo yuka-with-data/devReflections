@@ -15,7 +15,6 @@ ENTRIES_DIR = PROJECT_ROOT / "entries"
 # Set this to your preferred model name from `ollama list`.
 MODEL = "gemma4:e4b"
 
-
 def load_system_prompt() -> str:
     """Load the system prompt from a text file."""
     if not PROMPT_PATH.is_file():
@@ -51,8 +50,10 @@ def generate_question(entry: str) -> str:
 def save_entry(entry: str, question: str, answer: str) -> Path:
     """Save the entry, AI question, and user's answer as a Markdown file."""
     timestamp = datetime.now().astimezone()
+    year = timestamp.strftime("%Y")
+    month = timestamp.strftime("%m")
     filename = timestamp.strftime("%Y-%m-%d_%H-%M-%S.md")
-    file_path = ENTRIES_DIR / filename
+    file_path = ENTRIES_DIR / year / month / filename
 
     content = f'''# Reflection - {timestamp.strftime("%Y-%m-%d %H:%M:%S %Z")}
 
@@ -69,7 +70,7 @@ def save_entry(entry: str, question: str, answer: str) -> Path:
 {answer.strip()}
 '''
 
-    ENTRIES_DIR.mkdir(parents=True, exist_ok=True)
+    file_path.parent.mkdir(parents=True, exist_ok=True)
     file_path.write_text(content, encoding="utf-8")
 
     return file_path
