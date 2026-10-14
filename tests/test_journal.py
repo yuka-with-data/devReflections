@@ -7,12 +7,12 @@ from dev_reflections.journal import JOURNAL_PROMPTS, choose_starter_prompt
 def test_journal_prompts_contains_five_prompts():
     """Verify that all five expected starter prompts are available."""
     assert len(JOURNAL_PROMPTS) == 5
-    assert "What did I learn today?" in JOURNAL_PROMPTS
-    assert "What did I work on today?" in JOURNAL_PROMPTS
-    assert "What challenged me today?" in JOURNAL_PROMPTS
-    assert "What decision did I make, and why?" in JOURNAL_PROMPTS
+    assert "What did you learn today?" in JOURNAL_PROMPTS
+    assert "What did you work on today?" in JOURNAL_PROMPTS
+    assert "What challenged you today?" in JOURNAL_PROMPTS
+    assert "What decision did you make, and why?" in JOURNAL_PROMPTS
     assert (
-        "What am I curious about or want to explore next?"
+        "What are you curious about or want to explore next?"
         in JOURNAL_PROMPTS
     )
 
@@ -21,7 +21,7 @@ def test_choose_starter_prompt(monkeypatch):
     """Verify that choosing a number returns the matching prompt."""
     monkeypatch.setattr("builtins.input", lambda _: "2")
 
-    assert choose_starter_prompt() == "What did I work on today?"
+    assert choose_starter_prompt() == "What did you work on today?"
 
 
 def test_choose_free_writing(monkeypatch):
