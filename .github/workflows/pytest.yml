@@ -1,5 +1,3 @@
-
-# Run the pytest suite on pushes and pull requests.
 name: Pytest
 
 on:
