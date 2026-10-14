@@ -39,7 +39,6 @@ def main():
         print(f"Could not save your entry: {error}")
         return
 
-    print(f"\nSaved: {file_path}")
     print("Thank you for reflecting and growing.")
 
 if __name__ == "__main__":
