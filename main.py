@@ -9,7 +9,7 @@ from dev_reflections.journal import (
 )
 
 
-def main():
+def main(): # pylint: disable=too-many-return-statements
     """Collect a journal entry, reflect with AI, and save the result."""
     print("Welcome to devReflections!\n")
 
