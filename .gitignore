@@ -17,3 +17,6 @@ __pycache__/
 # Personal journal entries
 entries/*
 !entries/.gitkeep
+
+# Node modules
+node_modules/
