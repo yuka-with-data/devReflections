@@ -3,6 +3,40 @@ import re
 from datetime import datetime
 
 from dev_reflections import journal
+from dev_reflections.journal import JOURNAL_PROMPTS, choose_starter_prompt
+
+def test_journal_prompts_contains_five_prompts():
+    """Verify that all five expected starter prompts are available."""
+    assert len(JOURNAL_PROMPTS) == 5
+    assert "What did I learn today?" in JOURNAL_PROMPTS
+    assert "What did I work on today?" in JOURNAL_PROMPTS
+    assert "What challenged me today?" in JOURNAL_PROMPTS
+    assert "What decision did I make, and why?" in JOURNAL_PROMPTS
+    assert (
+        "What am I curious about or want to explore next?"
+        in JOURNAL_PROMPTS
+    )
+
+
+def test_choose_starter_prompt(monkeypatch):
+    """Verify that choosing a number returns the matching prompt."""
+    monkeypatch.setattr("builtins.input", lambda _: "2")
+
+    assert choose_starter_prompt() == "What did I work on today?"
+
+
+def test_choose_free_writing(monkeypatch):
+    """Verify that choosing zero skips the starter prompt."""
+    monkeypatch.setattr("builtins.input", lambda _: "0")
+
+    assert choose_starter_prompt() is None
+
+
+def test_choose_invalid_prompt(monkeypatch):
+    """Verify that an invalid choice returns an empty string."""
+    monkeypatch.setattr("builtins.input", lambda _: "9")
+
+    assert choose_starter_prompt() == ""
 
 def test_save_entry_creates_markdown(tmp_path, monkeypatch):
     """ Test that save_entry creates a Markdown file with the correct content."""
