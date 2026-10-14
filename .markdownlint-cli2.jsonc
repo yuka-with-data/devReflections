@@ -1,0 +1,12 @@
+{
+  "gitignore": true,
+  "globs": [
+    "**/*.md"
+  ],
+  "config": {
+    // Don't enforce maximum line length.
+    "MD013": false,
+    // Don't enforce ordered list item prefixes.
+    "MD029": false
+  }
+}
