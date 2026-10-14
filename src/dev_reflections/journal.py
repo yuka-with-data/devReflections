@@ -17,11 +17,11 @@ MODEL = "gemma4:e4b"
 
 # Optional starter prompts for journal entries.
 JOURNAL_PROMPTS = [
-    "What did I learn today?",
-    "What did I work on today?",
-    "What challenged me today?",
-    "What decision did I make, and why?",
-    "What am I curious about or want to explore next?",
+    "What did you learn today?",
+    "What did you work on today?",
+    "What challenged you today?",
+    "What decision did you make, and why?",
+    "What are you curious about or want to explore next?",
 ]
 
 def choose_starter_prompt() -> str | None:
