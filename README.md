@@ -86,6 +86,18 @@ entries/
 
 You can open, edit, or back up these files with any text editor. Your entries remain on your local machine unless you choose to share or sync them elsewhere.
 
+## Troubleshooting
+
+### Ollama connection error
+
+If `devReflections` cannot connect to Ollama, make sure Ollama is installed and its local server is running.
+
+- Windows / macOS: Open the Ollama application.
+- Linux: If Ollama is installed as a systemd service, run `sudo systemctl start ollama`.
+- Manual startup: Run `ollama serve` in a separate terminal.
+
+See the [official Ollama documentation for Linux setup](https://docs.ollama.com/linux) or the [troubleshooting guide](https://docs.ollama.com/troubleshooting) for further help.
+
 ## Project Status
 
 `devReflections` is an early-stage project built to explore a simple, local-first reflection workflow for developers.
