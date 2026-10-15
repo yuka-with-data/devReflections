@@ -79,9 +79,9 @@ Journal entries are saved as Markdown files in the entries/directory, organized 
 
 ```bash
 entries/
-└── 2026/
-    └── 10/
-        └── 2026-10-10_13-30-00.md
+└── YYYY/
+    └── MM/
+        └── YYYY-MM-DD_HH-MM-SS.md
 ```
 
 You can open, edit, or back up these files with any text editor. Your entries remain on your local machine unless you choose to share or sync them elsewhere.
