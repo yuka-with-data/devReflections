@@ -1,0 +1,9 @@
+# devReflections
+
+> A local-first journaling and reflection tool for developers.
+
+`devReflections` helsp developers and open-source contributors reflect on their daily experiences. Choose a starter prompt or write freely, the let a locally running AI model ask a follow-up question to encourage deeper reflection.
+
+Reflection can help developers make sense of what they learn, the challenges they encounter, and the decisions they make along the way. `devReflections` offers a lightweight way to explore these experiences without telling you what to think or do.
+
+**Your journal is personal.** `devReflections` runs on your own machine, and entries are saved as local Markdown files that you can read, edit, and keep under your control.
