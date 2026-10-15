@@ -72,3 +72,24 @@ Make sure Ollama is running before starting `devReflections`.
 3. Explore furture: A local AI model generates a follow-up question based on your entry.
 4. Respond: Write your answer to deepen your reflection.
 5. Save: Your entry and responses are saved as a Markdown file in the entries/directory.
+
+## Entry Storage
+
+Journal entries are saved as Markdown files in the entries/directory, organized by year and month:
+
+```bash
+entries/
+└── 2026/
+    └── 10/
+        └── 2026-10-10_13-30-00.md
+```
+
+You can open, edit, or back up these files with any text editor. Your entries remain on your local machine unless you choose to share or sync them elsewhere.
+
+## Project Status
+
+`devReflections` is an early-stage project built to explore a simple, local-first reflection workflow for developers.
+
+Current features include guided prompts, AI-generated follow-up questions, Markdown entry storage, and automated tests.
+
+Possible future improvements include AI-generated monthly summaires and further refinement of the reflection experience based on real-world use.
