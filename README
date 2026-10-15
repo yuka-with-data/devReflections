@@ -7,3 +7,52 @@
 Reflection can help developers make sense of what they learn, the challenges they encounter, and the decisions they make along the way. `devReflections` offers a lightweight way to explore these experiences without telling you what to think or do.
 
 **Your journal is personal.** `devReflections` runs on your own machine, and entries are saved as local Markdown files that you can read, edit, and keep under your control.
+
+## Quick Start
+
+### Prerequisites
+
+- [Python 3.12+](https://www.python.org/downloads/)
+- [Ollama](https://ollama.com/download)
+
+### Setup
+
+Clone the repository and navigate to the project directory:
+
+```bash
+# Clone the project and enter its directory
+git clone <repo-url>
+cd devReflections
+```
+
+Download the required AI model and create a virtual environment:
+
+```bash
+# Download the required local AI model
+olama pull gemma4:e4b
+
+# Create and activate a virtual environment
+python -m venv .venv
+```
+
+Activate the environment
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows (Powershell)
+.venv\Scripts\Activate.ps1
+```
+
+Install and run `devReflections`:
+
+```bash
+# Install the project and its dependencies
+python -m pip install -e .
+
+# Start journaling.
+python main.py
+```
+
+Make sure Ollama is running before starting `devReflections`.
