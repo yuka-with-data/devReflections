@@ -86,6 +86,8 @@ entries/
 
 You can open, edit, or back up these files with any text editor. Your entries remain on your local machine unless you choose to share or sync them elsewhere.
 
+**You can also explore [a sample journal entry](examples/2026/10/2026-10-15_09-30-00.md) to see how entries are formatted.**
+
 ## Troubleshooting
 
 ### Ollama connection error
