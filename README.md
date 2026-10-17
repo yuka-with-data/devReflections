@@ -130,3 +130,9 @@ Possible future improvements include AI-generated monthly summaires and further 
 ## License
 
 Apache 2.0 -See [License](LICENSE) for details.
+
+## Disclaimer
+
+`devReflections` is a personal reflection tool intended for learning and journaling. AI-generated questions may be imperfect, inaccurate, or unsuitable for some situations. They are not professional advice or a substitute for human judgment.
+
+The software is provided "as is", without warranties of any kind. See the [License](LICENSE) file for details.
