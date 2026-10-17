@@ -4,6 +4,13 @@
 
 **🏠 Local-first · 🔓 Open-weight models · 🔒 Privacy-minded**
 
+<!-- Project technology badges -->
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Gemma](https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/gemma)
+[![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)](https://pytest.org/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)](https://docs.github.com/en/actions)
+
 `devReflections` helps developers and open-source contributors reflect on their daily experiences. Choose a starter prompt or write freely, the let a locally running AI model ask a follow-up question to encourage deeper reflection.
 
 Reflection can help developers make sense of what they learn, the challenges they encounter, and the decisions they make along the way. `devReflections` offers a lightweight way to explore these experiences without telling you what to think or do.
