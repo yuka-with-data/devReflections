@@ -78,7 +78,7 @@ Make sure Ollama is running before starting `devReflections`.
 
 1. Choose a prompt: Select a starter prompt or write freely.
 2. Reflect: Write about your experiences, challenges, decisions, or learning.
-3. Explore furture: A local AI model generates a follow-up question based on your entry.
+3. Explore further: A local AI model generates a follow-up question based on your entry.
 4. Respond: Write your answer to deepen your reflection.
 5. Save: Your entry and responses are saved as a Markdown file in the entries/directory.
 
