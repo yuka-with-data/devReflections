@@ -2,7 +2,9 @@
 
 > A local-first journaling and reflection tool for developers.
 
-`devReflections` helsp developers and open-source contributors reflect on their daily experiences. Choose a starter prompt or write freely, the let a locally running AI model ask a follow-up question to encourage deeper reflection.
+**🏠 Local-first · 🔓 Open-weight models · 🔒 Privacy-minded**
+
+`devReflections` helps developers and open-source contributors reflect on their daily experiences. Choose a starter prompt or write freely, the let a locally running AI model ask a follow-up question to encourage deeper reflection.
 
 Reflection can help developers make sense of what they learn, the challenges they encounter, and the decisions they make along the way. `devReflections` offers a lightweight way to explore these experiences without telling you what to think or do.
 
@@ -87,6 +89,16 @@ entries/
 You can open, edit, or back up these files with any text editor. Your entries remain on your local machine unless you choose to share or sync them elsewhere.
 
 **You can also explore [a sample journal entry](examples/2026/10/2026-10-15_09-30-00.md) to see how entries are formatted.**
+
+## Reflection Philosophy
+
+`devReflections` is designed to make reflection feel natural, meaningful, and pressure-free. Its AI-generated questions aim to embody five core qualities:
+
+* 💗 **Caring**: Warm, considerate, nonjudgmental, and empathetic.
+* 🌿 **Approachable**: Simple, natural, conversational, and low-pressure.
+* 💭 **Reflective**: Thought-provoking, curious, and meaningful without demanding deep answers.
+* 🧭 **Grounded**: Relevant to the user's actual experiences, challenges, and motivations.
+* 🕊️ **Gentle**: Patient, nonintrusive, and never demanding.
 
 ## Troubleshooting
 
