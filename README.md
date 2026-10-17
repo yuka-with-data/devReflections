@@ -2,7 +2,7 @@
 
 > A local-first journaling and reflection tool for developers.
 
-**🏠 Local-first · 🔓 Open-weight models · 🔒 Privacy-minded**
+🏠 Local-first · 🔓 Open-weight models · 🔒 Privacy-minded
 
 <!-- Project technology badges -->
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
@@ -101,11 +101,11 @@ You can open, edit, or back up these files with any text editor. Your entries re
 
 `devReflections` is designed to make reflection feel natural, meaningful, and pressure-free. Its AI-generated questions aim to embody five core qualities:
 
-* 💗 **Caring**: Warm, considerate, nonjudgmental, and empathetic.
-* 🌿 **Approachable**: Simple, natural, conversational, and low-pressure.
-* 💭 **Reflective**: Thought-provoking, curious, and meaningful without demanding deep answers.
-* 🧭 **Grounded**: Relevant to the user's actual experiences, challenges, and motivations.
-* 🕊️ **Gentle**: Patient, nonintrusive, and never demanding.
+- 💗 **Caring**: Warm, considerate, nonjudgmental, and empathetic.
+- 🌿 **Approachable**: Simple, natural, conversational, and low-pressure.
+- 💭 **Reflective**: Thought-provoking, curious, and meaningful without demanding deep answers.
+- 🧭 **Grounded**: Relevant to the user's actual experiences, challenges, and motivations.
+- 🕊️ **Gentle**: Patient, nonintrusive, and never demanding.
 
 ## Troubleshooting
 
