@@ -107,3 +107,7 @@ See the [official Ollama documentation for Linux setup](https://docs.ollama.com/
 Current features include guided prompts, AI-generated follow-up questions, Markdown entry storage, and automated tests.
 
 Possible future improvements include AI-generated monthly summaires and further refinement of the reflection experience based on real-world use.
+
+## License
+
+Apache 2.0 -See [License](LICENSE) for details.
