@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">devReflections reflection icon</title>
+  <rect width="64" height="64" rx="14" fill="#f8f7f4"/>
+  <g fill="none" stroke="#365d9b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 17.5h27a9 9 0 0 1 9 9v8a9 9 0 0 1-9 9H27l-9 7v-7h-5a9 9 0 0 1-9-9v-8a9 9 0 0 1 9-9z" transform="translate(4 -3)"/>
+    <path d="M45 7.5v10M40 12.5h10"/>
+  </g>
+  <path d="m49 23 1.8 4.2L55 29l-4.2 1.8L49 35l-1.8-4.2L43 29l4.2-1.8z" fill="#365d9b"/>
+</svg>
