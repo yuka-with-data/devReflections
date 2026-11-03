@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page metadata and responsive settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="devReflections is a local-first developer journal for reflecting on what you learn, not just what you ship.">
+
+    <title>devReflections | Developer Journal</title>
+
+    <style>
+        /* Base styles */
+        :root {
+            --background: #f8f7f4;
+            --surface: #ffffff;
+            --text: #292b30;
+            --muted: #626670;
+            --accent: #365d9b;
+            --border: #e5e3de;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: min(100% - 40px, 850px);
+            margin-inline: auto;
+        }
+
+        /* Header */
+        header {
+            padding: 22px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 85px 0 65px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            margin: 20px 0;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 7px;
+            font-weight: 600;
+        }
+
+        .button.primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .button.secondary {
+            color: var(--accent);
+        }
+
+        /* Example card */
+        .example {
+            margin-top: 55px;
+            padding: 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .example-label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .example h3 {
+            margin-bottom: 8px;
+        }
+
+        .example p {
+            color: var(--muted);
+        }
+
+        /* General sections */
+        section.content-section {
+            padding: 55px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+            margin-top: 0;
+        }
+
+        .section-intro {
+            color: var(--muted);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .feature {
+            padding: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .feature p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        /* Workflow */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .step-number {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Technology tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Get started */
+        .code-block {
+            padding: 18px;
+            background: #292b30;
+            color: #f8f7f4;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0 45px;
+            }
+
+            .feature-list,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🖊️devReflections</a>
+            <a href="https://github.com/yuka-with-data/devReflections">
+                View source ↗
+            </a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+            <p class="eyebrow">A LOCAL-FIRST DEVELOPER JOURNAL</p>
+
+            <h1>Reflect on what you learn,<br>not just what you ship.</h1>
+
+            <p class="hero-description">
+                A small, AI-assisted journaling tool that helps
+                developers reflect on their daily experiences,
+                capture lessons, and recognize their progress.
+            </p>
+
+            <div class="actions">
+                <a class="button primary"
+                   href="https://github.com/yuka-with-data/devReflections">
+                    Explore on GitHub
+                </a>
+
+                <a class="button secondary" href="#example">
+                    See an example
+                </a>
+            </div>
+
+            <!-- Example reflection -->
+            <div class="example" id="example">
+                <span class="example-label">A reflection example</span>
+
+                <h3>Today's reflection</h3>
+
+                <p>
+                    You spent time debugging a problem today.
+                    What did the experience teach you about
+                    your approach to problem-solving?
+                </p>
+
+                <p>
+                    <em>
+                        Sometimes progress is not about writing
+                        more code, but understanding a problem
+                        a little better.
+                    </em>
+                </p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="content-section">
+            <h2>Why devReflections?</h2>
+
+            <p class="section-intro">
+                Development is more than commits, pull requests,
+                and completed tasks. Make room for learning, too.
+            </p>
+
+            <div class="feature-list">
+                <article class="feature">
+                    <h3>Daily Reflection</h3>
+                    <p>
+                        Turn everyday development experiences
+                        into meaningful learning moments.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>Thoughtful AI Prompts</h3>
+                    <p>
+                        Get simple, grounded questions that
+                        encourage reflection without overwhelming you.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>Markdown Journaling</h3>
+                    <p>
+                        Keep your entries organized and readable
+                        as ordinary Markdown files.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>Local-First</h3>
+                    <p>
+                        Run AI locally and keep your journal
+                        entries on your own machine.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Workflow -->
+        <section class="content-section">
+            <h2>How it works</h2>
+
+            <p class="section-intro">
+                A lightweight workflow, designed to fit
+                naturally into your development routine.
+            </p>
+
+            <div class="steps">
+                <div>
+                    <span class="step-number">01</span>
+                    <h3>Show up</h3>
+                    <p>Start with a thought, experience, or learning moment.</p>
+                </div>
+
+                <div>
+                    <span class="step-number">02</span>
+                    <h3>Reflect</h3>
+                    <p>Explore a thoughtful question generated by local AI.</p>
+                </div>
+
+                <div>
+                    <span class="step-number">03</span>
+                    <h3>Record</h3>
+                    <p>Save your reflection as a Markdown journal entry.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology -->
+        <section class="content-section">
+            <h2>Built with open technology.</h2>
+
+            <p class="section-intro">
+                Powered by familiar tools and designed for
+                local execution.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Ollama</span>
+                <span class="tag">Gemma</span>
+                <span class="tag">Markdown</span>
+                <span class="tag">Open Source</span>
+            </div>
+        </section>
+
+        <!-- Privacy -->
+        <section class="content-section">
+            <h2>Your journal, your space.</h2>
+
+            <p class="section-intro">
+                devReflections uses Ollama to run language models
+                locally. Journal entries are stored on your machine
+                rather than sent to a hosted journaling service.
+            </p>
+
+            <p class="section-intro">
+                No external AI API key or cloud account is required
+                for the intended local workflow.
+            </p>
+        </section>
+
+        <!-- Get Started -->
+        <section class="content-section">
+            <h2>Get started</h2>
+
+            <p class="section-intro">
+                Explore the source code and run devReflections
+                locally on your machine.
+            </p>
+
+            <div class="code-block">
+                <pre><code>git clone <devReflections repository URL>
+cd devReflections
+
+python -m pip install -e .
+python main.py</code></pre>
+            </div>
+
+            <p>
+                <a href="https://github.com/yuka-with-data/devReflections">
+                    Read the installation guide and documentation ↗
+                </a>
+            </p>
+        </section>
+
+        <!-- Closing -->
+        <section class="content-section">
+            <h2>Show up. Reflect. Keep growing.</h2>
+
+            <p class="section-intro">
+                Progress is not always measured by what you ship.
+                Sometimes it starts with what you learn.
+            </p>
+
+            <a class="button primary"
+               href="https://github.com/yuka-with-data/devReflections">
+                View project on GitHub
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>devReflections · Open Source Developer Journal</p>
+            <p>Built with Python and local AI.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
