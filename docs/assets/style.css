@@ -293,6 +293,126 @@ h2 {
 }
 
 
+
+/* =========================================
+   Journal storage and Markdown preview
+   ========================================= */
+
+.storage-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.storage-panel {
+    min-width: 0;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.storage-panel h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+/* Directory tree */
+
+.file-tree {
+    padding: 12px 0;
+    font-size: 0.9rem;
+}
+
+.tree-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    color: var(--text);
+}
+
+.tree-level-1 {
+    padding-left: 22px;
+}
+
+.tree-level-2 {
+    padding-left: 44px;
+}
+
+.tree-level-3 {
+    padding-left: 66px;
+}
+
+.tree-level-4 {
+    padding-left: 88px;
+}
+
+.folder-icon,
+.file-icon {
+    font-size: 0.95rem;
+}
+
+/* Markdown preview */
+
+.file-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-preview-header h3 {
+    margin-bottom: 18px;
+}
+
+.file-type {
+    margin-bottom: 18px;
+    padding: 3px 8px;
+    background: #eef1f6;
+    color: var(--accent);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.markdown-preview {
+    padding: 16px;
+    background: #292b30;
+    color: #f8f7f4;
+    border-radius: 7px;
+    overflow-x: auto;
+}
+
+.markdown-preview pre {
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.markdown-preview code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.82rem;
+    line-height: 1.8;
+}
+
+.storage-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Responsive storage layout */
+
+@media (max-width: 750px) {
+    .storage-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================================
    Technology tags
    ========================================= */
