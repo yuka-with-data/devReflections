@@ -424,10 +424,12 @@ h2 {
     margin-top: 20px;
 }
 
+/* Soft steel blue tags */
 .tag {
     padding: 5px 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: rgba(71, 104, 135, 0.12);
+    color: #54718d;
+    border: 1px solid rgba(71, 104, 135, 0.22);
     border-radius: 20px;
     font-size: 0.85rem;
 }
