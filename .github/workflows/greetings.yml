@@ -1,0 +1,32 @@
+name: Greetings
+
+on:
+  pull_request_target:
+    types: [opened]
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  greeting:
+    name: Greet First-Time Contributors
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome first-time contributors
+        uses: actions/first-interaction@v3
+        with:
+          issue_message: |
+            Thank you for opening your first issue.
+
+            Please review the README and contribution guidelines
+            to ensure your issue includes the relevant context.
+
+          pr_message: |
+            Thank you for your first pull request.
+
+            Please ensure your changes follow the contribution
+            guidelines and include sufficient context for review.
